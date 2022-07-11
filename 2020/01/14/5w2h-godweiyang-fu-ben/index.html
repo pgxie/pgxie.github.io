@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>1111111111111 | 平谷の博客</title><meta name="keywords" content="博客"><meta name="author" content="PGXIE,2505552027@qq.com"><meta name="copyright" content="PGXIE"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关注公众号【算法码上来】，每日算法干货马上就来！    When？什么时候开始写的？ 第一次写博客是 2015 年了，在 CSDN 和博客园上面，当时写文章是为了记录 ACM 竞赛的题解，陆陆续续写了几十篇。但是最后还是没有坚持下去，主要还是因为 CSDN 和博客园的体验太差了，写起文章来很难受，又丑又慢。另一个原因是， CSDN 发个文章还需要审核，定制主题自由度也太差。 第二次就是 2017">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1111111111111">
+<meta property="og:url" content="http://example.com/2020/01/14/5w2h-godweiyang-fu-ben/index.html">
+<meta property="og:site_name" content="平谷の博客">
+<meta property="og:description" content="关注公众号【算法码上来】，每日算法干货马上就来！    When？什么时候开始写的？ 第一次写博客是 2015 年了，在 CSDN 和博客园上面，当时写文章是为了记录 ACM 竞赛的题解，陆陆续续写了几十篇。但是最后还是没有坚持下去，主要还是因为 CSDN 和博客园的体验太差了，写起文章来很难受，又丑又慢。另一个原因是， CSDN 发个文章还需要审核，定制主题自由度也太差。 第二次就是 2017">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/0.png">
+<meta property="article:published_time" content="2020-01-14T07:27:31.000Z">
+<meta property="article:modified_time" content="2021-11-14T15:35:33.145Z">
+<meta property="article:author" content="PGXIE">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/0.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/01/14/5w2h-godweiyang-fu-ben/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1111111111111',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-14 23:35:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="平谷の博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/0.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/javase"><i class="fa-fw fa fa-folder-open"></i><span> JavaSE</span></a></li><li><a class="site-page child" href="/categories/javaweb"><i class="fa-fw fa fa-folder-open"></i><span> JavaWeb</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF"><i class="fa-fw fa fa-folder-open"></i><span> 前端</span></a></li><li><a class="site-page child" href="/categories/%E6%A1%86%E6%9E%B6"><i class="fa-fw fa fa-folder-open"></i><span> 框架</span></a></li><li><a class="site-page child" href="/categories/spring"><i class="fa-fw fa fa-folder-open"></i><span> Spring</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93"><i class="fa-fw fa fa-folder-open"></i><span> 数据库</span></a></li><li><a class="site-page child" href="/categories/%E5%85%B6%E5%AE%83"><i class="fa-fw fa fa-folder-open"></i><span> 其它</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/content/7.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">平谷の博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/javase"><i class="fa-fw fa fa-folder-open"></i><span> JavaSE</span></a></li><li><a class="site-page child" href="/categories/javaweb"><i class="fa-fw fa fa-folder-open"></i><span> JavaWeb</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF"><i class="fa-fw fa fa-folder-open"></i><span> 前端</span></a></li><li><a class="site-page child" href="/categories/%E6%A1%86%E6%9E%B6"><i class="fa-fw fa fa-folder-open"></i><span> 框架</span></a></li><li><a class="site-page child" href="/categories/spring"><i class="fa-fw fa fa-folder-open"></i><span> Spring</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93"><i class="fa-fw fa fa-folder-open"></i><span> 数据库</span></a></li><li><a class="site-page child" href="/categories/%E5%85%B6%E5%AE%83"><i class="fa-fw fa fa-folder-open"></i><span> 其它</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">1111111111111</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-01-14T07:27:31.000Z" title="发表于 2020-01-14 15:27:31">2020-01-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-14T15:35:33.145Z" title="更新于 2021-11-14 23:35:33">2021-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="1111111111111"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>关注公众号【算法码上来】，每日算法干货马上就来！</p>
+</blockquote>
+<p><img src="/medias/contact.jpg" alt="" /></p>
+<h2 id="when什么时候开始写的"><a class="markdownIt-Anchor" href="#when什么时候开始写的"></a> When？什么时候开始写的？</h2>
+<p>第一次写博客是 2015 年了，在 CSDN 和博客园上面，当时写文章是为了记录 ACM 竞赛的题解，陆陆续续写了几十篇。但是最后还是没有坚持下去，主要还是因为 CSDN 和博客园的体验太差了，写起文章来很难受，又丑又慢。另一个原因是， CSDN 发个文章还需要审核，定制主题自由度也太差。</p>
+<p>第二次就是 2017 年暑假了，当时自己建了个人博客，域名是：<a target="_blank" rel="noopener" href="https://godweiyang.com/">godweiyang.com</a>。当时的想法是，个人博客好好看，有各种主题，如果会点前端知识，还能自己魔改。个人博客主要更新的就是自然语言处理的知识了，主要都是些论文的阅读赏析。另外还更新一些计算机相关的基础知识，主要考虑到绝大多数人并不会对枯燥又专业的自然语言处理感兴趣。算法题解的话最近也开始更新起来了，主要写一些 LeetCode上面的题解。</p>
+<p>最后就是知乎专栏和微信公众号了，这两个平台是最近才搞的，主要把个人博客的文章同步更新过去，内容都差不多。微信公众号本来不想搞的，不支持 markdown ，写起来挺麻烦的。但是考虑到以后的发展，以及可能会有一些变现的操作，还是重操旧业了（其实我公众号两年前就注册过了，只是一直没有更新）。</p>
+<h2 id="why为什么会想起来写博客"><a class="markdownIt-Anchor" href="#why为什么会想起来写博客"></a> Why？为什么会想起来写博客？</h2>
+<p>其实刚开始写博客，主要还是为了记录自己平时学到的一些东西，以后可能还能翻出来复习复习。但是现在看来，基本不会再去翻以前写的东西了。</p>
+<p>另一个目的，也是我写博客最主要的目的，还是想分享我知道的一些东西，能够让更多的人因此受益。因为写博客，其实还是认识了不少天南地北的朋友的，有各个高校甚至初高中的学生，也有工作了很多年想学习学习编程的，也有国外一些名校的学生。不管是谁，我觉得都可以扩展我的人脉，现在微信好友人数上限扩展到了 5000 人了，而我才用了十分之一多一点，什么时候能达到上限也算是圆满了。</p>
+<p>最后，有句话叫做：“不以盈利为目的的博客最后都死亡了”。因为如果不能因此获得任何的收入的话，极少有人有这个毅力坚持更新博客。虽然我也想因此获利，但是暂时我并不想因此改变了初衷，去写一些刻意迎合大众的水文，从而获得粉丝。</p>
+<h2 id="what都写一些什么主题的博客"><a class="markdownIt-Anchor" href="#what都写一些什么主题的博客"></a> What？都写一些什么主题的博客？</h2>
+<p>主要都是与我相关的一些计算机相关知识。最主要的就是深度学习和自然语言处理了，但是因为我是做句法分析的，这个方向受众比较小，如果纯粹写这个方向的内容的话，看的人可能会很少。而如果写深度学习和自然语言处理的入门普及或者综合一点热门一点的方向的话，看得人应该会很多。但是这样又有一个弊端，非常的浪费我时间，因为过于基础的知识对我的提升微乎其微，只适合以后我面试前看看补补基础。而主要我现在重心还在发论文，继续搞学术，所以只能写一些结合我最近所学知识的文章。</p>
+<p>还会写一些算法题解，现在主要在做 LeetCode 上面的中等和困难题目，然后每日一更。尽管网上各种 LeetCode 的题解已经太多了，但是我觉得，大多数的题解都非常的模糊，讲解的很不清楚，抄来抄去的有什么意思？而他们的代码风格，更是让我看不下去，最基本的美观都做不到，代码的简洁精炼就更不用谈了。所以我的目的还是尽量用美观精炼的代码来让更多人的算法思想和代码能力得到提升。</p>
+<p>偶尔，我还会分享一些计算机基础知识，比如怎么搭博客（这是我阅读量最高的一篇博客了）、好用的软件、常用的一些软件的安装配置等等。其实讲道理，我是不愿意写这一类文章的，因为非常的费时费力，需要自己动手模拟一遍，确保能够正确完成才能写进文章。不然就会像很多网上的教程那样，抄来抄去一堆错误，根本没有自己动手实践过。但是这种文章其实对很多人帮助还挺大的，大家也乐意去看，如果你在知乎发的话，你会发现这类文章收藏量都挺高的。如果我以后用空了，我还是会经常把我平时的一些经验分享给大家的，比如 LaTeX 常用写作技巧之类的。</p>
+<p>那么其他火的博客都写些什么呢？我觉得当代人闲暇时候、上厕所刷手机的时候，那些碎片时间是没办法好好学习一些知识的，最爱看的还是有趣的故事，例如 99 行代码做出冰雪奇缘特效、程序员脱发、程序员单身狗啦之类的。这些故事背后的技术可能是很深奥的，但是大多数人并不会去关心，只是会看完惊叹一句“卧槽”而已。其他的吸引人的内容还有资料下载、课程学习（当然基本都是广告）等等。不过我个人目前并不想写这些东西，首先这些新闻类的文章很多地方都有了，写来写去就那么些东西，同质化严重。而资料下载确实是个不错的主意，可以分享好东西给大家，但是我个人最近也没有太多值得珍藏的好资料，况且大多数网上都有现成的，我不赞同为了增加粉丝而不放出链接，把资料放在公众号后台的行为。</p>
+<p>总之，不忘初心，粉丝什么的随缘吧。我非常佛系，即使没人看我也会日常更新，就当记日记不是吗？</p>
+<h2 id="who写出来的博客都是给谁看的"><a class="markdownIt-Anchor" href="#who写出来的博客都是给谁看的"></a> Who？写出来的博客都是给谁看的？</h2>
+<p>大多数看我博客的都是自然语言处理相关的学生。就拿我在知乎专栏的粉丝来看，大多数人是来看我的论文赏析的，而少部分人是看到了那篇博客搭建教程来的。至于算法题解，貌似并没有很多人看，可能这一类文章网上实在是太多了，没有什么独特的吸引力。而公众号粉丝，目前为止还很少，绝大多数还都是好友粉丝。主要原因还是公众号太封闭了，很难让好友之外的人知道并且关注你。一个方法可以在知乎等平台引流，但是现在这属于违规操作，最好还是不要干了。</p>
+<p>其实我目标的受众群体还是包括但不仅限于计算机系的学生，像一些计算机基础知识，就算你是个小白，也可以从这里学到很多东西。甚至还有很多考研的学生来咨询我问题，虽然我是保研的，但是很多导师选取、学习方面的问题我还是愿意给出我自己的建议的。我这个人向来喜欢分享，也喜欢倾听，如果别人来问我问题，我基本是会耐心回答的。曾经有啥都不会的小白来问我怎么搭建博客，我得从最基本的命令行教他，讲道理这其实很烦，我都不想教，但我还是会尽量把关键点都告诉他。有人会觉得，我这样最后会得到什么呢？是的，也不赚钱，最多偶尔有些朋友会打赏个红包，我还浪费了大把时间（其实还好，白天工作的时候我都简单回复，晚上一般会详细点），但是认识的人多了，许多人还是多少知道我这个名字的，虽然没啥用，但是也算是种隐形财富吧，以后有什么用再说。</p>
+<h2 id="where都在什么平台写博客呢"><a class="markdownIt-Anchor" href="#where都在什么平台写博客呢"></a> Where？都在什么平台写博客呢？</h2>
+<p>这个其实上面都说过了，我现在文章主要更新在个人博客、知乎专栏、微信公众号和 CSDN 上面，我简要说一些这些平台的优缺点吧。</p>
+<p>个人博客可以个性化定制主题，想怎么好看就怎么好看，还不用发文章审核，想发什么就发什么。但是缺点就是发文章麻烦一点的，步骤略多，并且搜索引擎收录很慢的。</p>
+<p>知乎专栏是我比较喜欢的一个平台，主要是它支持markdown，还可以把公式变成矢量图片，还是挺不错的。但是发知乎文章要注意千万别带着营销、引流等内容，不然容易被人举报被删除甚至禁言。</p>
+<p>微信公众号是我最近才开始运营的，相对而言，它的编辑界面是最不友好的一个，只支持富文本编辑，连markdown都没有。但是也有解决方法，比如我现在用<a target="_blank" rel="noopener" href="https://mdnice.com/">mdnice.com</a>这个网站，把markdown转换成微信公众号的富文本格式，还是非常好用的。公众号还有个缺点，太封闭了，很难宣传出去，刚开始只能亲朋好友关注关注，但是如果你真的做大了知名度，还是可以借助微信的优势，赚得不少广告钱的。</p>
+<p>CSDN因为几年前被永久封过号，然后现在不知道为什么又被解封了，所以用的不是特别多，主要都是通过知乎专栏自动同步文章过去的。CSDN 好处就是流量大，很多人都在上面搜东西，百度搜出来也基本都是 CSDN ，但是排版是真的真的烂，不过现在好多了，也支持 markdown 了。但是还是谈不上喜欢，广告什么的都太多了，除非迫不得已，我一般不去 CSDN 看技术文章，我一般都是个人博客或者知乎看论文解读之类的。</p>
+<h2 id="how按照什么流程来写博客"><a class="markdownIt-Anchor" href="#how按照什么流程来写博客"></a> How？按照什么流程来写博客？</h2>
+<p>其实同时维护好几个平台还是挺累的，你得找到一个最佳的顺序来发布文章，这样才能事半功倍。我一般都是先在个人博客上写好 markdown 文章，然后发布完之后，打开<a target="_blank" rel="noopener" href="https://mdnice.com/">mdnice.com</a>在线编辑网站，把 markdown 粘贴进去，转成微信公众号和知乎专栏的格式，最后分别发布在两个地方就行了。 CSDN 就不用管了，它会每天自动同步知乎专栏的文章的，倒是为我省了不少事。markdown 写作也挺轻松的，完全不用管排版之类的问题，安安心心写内容就行了。</p>
+<p>微信公众号现在设置的是每天早上 8:05 推送，其实稍微晚一点比较好，这样别人的都推送完了，你的就会置顶在最上面。而知乎专栏和个人博客我就随性发布了，想什么时候发就什么时候发，经常会前一天就写好内容，早早的发布出去了。</p>
+<p>我个人现在来看，写一篇博客最累的是敲公式和找图片，当然像我这篇就一个公式和图都没有，是最最轻松的了。我这个人有强迫症，公式一定要手打 LaTeX 公式，然后转成矢量图才行，这样看着又清楚又舒服。遇到复杂的矩阵公式，能把我敲的头晕。这也是我为什么不喜欢 CSDN 的一个原因，上面很多文章公式全是截图，看的我头都大了。</p>
+<h2 id="how-much要花多少时间和金钱来运营维护"><a class="markdownIt-Anchor" href="#how-much要花多少时间和金钱来运营维护"></a> How much？要花多少时间和金钱来运营维护？</h2>
+<p>写博客挺花时间的，特别是现在还在为发论文而忙活的时候，可能论文截稿前那段时间甚至我会停更好久哈哈。不过现在放假了，还算比较闲，有功夫搞搞这些。我个人是倾向于白天还是老老实实学习吧，晚上把部分的游戏时间抽出来写会儿文章，更新一波。这样也不算太浪费时间，毕竟就算不写，时间也都用来打游戏了，游戏输了还坏了心情（我的亚索怎么会输？）。</p>
+<p>那什么时候做 LeetCode 呢？我一般都是白天吃饭时，或者走在路上时，手机 app 上随机选一道题，然后吃个饭的时间就能想出个解法，回到实验室后敲一顿代码通过了就行了。这样看来也节约了不少时间嘛，还能和室友一起讨论讨论，帮他提高一波算法能力。</p>
+<p>金钱的话就基本没有花销了，除了开了个素材设计网站的会员（我是真的睿智，用 PS 不就行了嘛，脑子瓦特了充钱了）以外，其他不需要啥了，偶尔还能吃点打赏钱，粉丝太少了，没有广告。</p>
+<p>因为写文章这上面花时间比较多，写出好的文章、不水文章的话花的时间更多，所以很容易坚持不下去。而又要迎合大众的口味，众口难调嘛，又要坚持自己的初心，尽量写对自己提升大的内容，还是比较难以平衡的。特别是粉丝特别少，没有什么人看的时候，你会很想放弃。</p>
+<p>但是，总会有人在你坚持不下去的时候，给你鼓励的目光，支持你继续走下去的。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">PGXIE</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/01/14/5w2h-godweiyang-fu-ben/">http://example.com/2020/01/14/5w2h-godweiyang-fu-ben/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">平谷の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a></div><div class="post_share"><div class="social-share" data-image="/img/0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/14/2/"><img class="prev-cover" src="/img/content/6.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ElasticSearch第二天</div></div></a></div><div class="next-post pull-right"><a href="/2020/01/14/5w2h-godweiyang/"><img class="next-cover" src="/img/content/4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">5W2H | 关于写博客的七点反思</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/02/14/2/" title="ElasticSearch第二天"><img class="cover" src="/img/content/6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-14</div><div class="title">ElasticSearch第二天</div></div></a></div><div><a href="/2022/03/14/3/" title="Lucene"><img class="cover" src="/img/content/16.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-14</div><div class="title">Lucene</div></div></a></div><div><a href="/2022/04/14/readme-cn/" title="hexo-theme-matery【readme】"><img class="cover" src="/img/content/13.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-14</div><div class="title">hexo-theme-matery【readme】</div></div></a></div><div><a href="/2020/01/14/5w2h-godweiyang/" title="5W2H | 关于写博客的七点反思"><img class="cover" src="/img/content/4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-14</div><div class="title">5W2H | 关于写博客的七点反思</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/0.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">PGXIE</div><div class="author-info__description">学习与生活记录的地方！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/pgxie" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2505552027@qq.com" target="_blank" title="Email"><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#when%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BC%80%E5%A7%8B%E5%86%99%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> When？什么时候开始写的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%83%B3%E8%B5%B7%E6%9D%A5%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-number">2.</span> <span class="toc-text"> Why？为什么会想起来写博客？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what%E9%83%BD%E5%86%99%E4%B8%80%E4%BA%9B%E4%BB%80%E4%B9%88%E4%B8%BB%E9%A2%98%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-number">3.</span> <span class="toc-text"> What？都写一些什么主题的博客？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#who%E5%86%99%E5%87%BA%E6%9D%A5%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%83%BD%E6%98%AF%E7%BB%99%E8%B0%81%E7%9C%8B%E7%9A%84"><span class="toc-number">4.</span> <span class="toc-text"> Who？写出来的博客都是给谁看的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where%E9%83%BD%E5%9C%A8%E4%BB%80%E4%B9%88%E5%B9%B3%E5%8F%B0%E5%86%99%E5%8D%9A%E5%AE%A2%E5%91%A2"><span class="toc-number">5.</span> <span class="toc-text"> Where？都在什么平台写博客呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how%E6%8C%89%E7%85%A7%E4%BB%80%E4%B9%88%E6%B5%81%E7%A8%8B%E6%9D%A5%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-number">6.</span> <span class="toc-text"> How？按照什么流程来写博客？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-much%E8%A6%81%E8%8A%B1%E5%A4%9A%E5%B0%91%E6%97%B6%E9%97%B4%E5%92%8C%E9%87%91%E9%92%B1%E6%9D%A5%E8%BF%90%E8%90%A5%E7%BB%B4%E6%8A%A4"><span class="toc-number">7.</span> <span class="toc-text"> How much？要花多少时间和金钱来运营维护？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/javase/javase-ji-chu-zhi-shi/" title="JavaSE 基础知识"><img src="/img/content/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE 基础知识"/></a><div class="content"><a class="title" href="/2022/07/10/javase/javase-ji-chu-zhi-shi/" title="JavaSE 基础知识">JavaSE 基础知识</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/javase/javase-chang-yong-lei/" title="JavaSE常用类"><img src="/img/content/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE常用类"/></a><div class="content"><a class="title" href="/2022/07/10/javase/javase-chang-yong-lei/" title="JavaSE常用类">JavaSE常用类</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/javase/javase-nei-cun-guan-li/" title="JavaSE 内存管理"><img src="/img/content/16.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE 内存管理"/></a><div class="content"><a class="title" href="/2022/07/10/javase/javase-nei-cun-guan-li/" title="JavaSE 内存管理">JavaSE 内存管理</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/javase/javase-mian-xiang-dui-xiang/" title="JavaSE 面向对象"><img src="/img/content/15.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE 面向对象"/></a><div class="content"><a class="title" href="/2022/07/10/javase/javase-mian-xiang-dui-xiang/" title="JavaSE 面向对象">JavaSE 面向对象</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/10/javase/javase-ji-he-kuang-jia/" title="Java集合框架"><img src="/img/content/5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java集合框架"/></a><div class="content"><a class="title" href="/2022/07/10/javase/javase-ji-he-kuang-jia/" title="Java集合框架">Java集合框架</a><time datetime="2022-07-09T16:00:00.000Z" title="发表于 2022-07-10 00:00:00">2022-07-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By PGXIE</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
