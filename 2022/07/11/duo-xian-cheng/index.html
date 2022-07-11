@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>平谷の博客 | 平谷の博客</title><meta name="author" content="PGXIE,2505552027@qq.com"><meta name="copyright" content="PGXIE"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="返回当前线程的名称：Thread.currentThread().getName() 线程的名称是由：Thread-编号定义的。编号从0开始。 线程要运行的代码都统一存放在了run方法中。 线程要运行必须要通过类中指定的方法开启。start方法。（启动后，就多了一条执行路径） start方法： 1）启动了线程； 2）让jvm调用了run方法。 线程的启动 ☆ Thread类中run()和start">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平谷の博客">
+<meta property="og:url" content="http://example.com/2022/07/11/duo-xian-cheng/index.html">
+<meta property="og:site_name" content="平谷の博客">
+<meta property="og:description" content="返回当前线程的名称：Thread.currentThread().getName() 线程的名称是由：Thread-编号定义的。编号从0开始。 线程要运行的代码都统一存放在了run方法中。 线程要运行必须要通过类中指定的方法开启。start方法。（启动后，就多了一条执行路径） start方法： 1）启动了线程； 2）让jvm调用了run方法。 线程的启动 ☆ Thread类中run()和start">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/content/16.png">
+<meta property="article:published_time" content="2022-07-11T08:21:12.212Z">
+<meta property="article:modified_time" content="2022-07-11T08:22:20.988Z">
+<meta property="article:author" content="PGXIE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/content/16.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/07/11/duo-xian-cheng/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '平谷の博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-11 16:22:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="平谷の博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/0.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/javase"><i class="fa-fw fa fa-folder-open"></i><span> JavaSE</span></a></li><li><a class="site-page child" href="/categories/javaweb"><i class="fa-fw fa fa-folder-open"></i><span> JavaWeb</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF"><i class="fa-fw fa fa-folder-open"></i><span> 前端</span></a></li><li><a class="site-page child" href="/categories/%E6%A1%86%E6%9E%B6"><i class="fa-fw fa fa-folder-open"></i><span> 框架</span></a></li><li><a class="site-page child" href="/categories/spring"><i class="fa-fw fa fa-folder-open"></i><span> Spring</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93"><i class="fa-fw fa fa-folder-open"></i><span> 数据库</span></a></li><li><a class="site-page child" href="/categories/%E5%85%B6%E5%AE%83"><i class="fa-fw fa fa-folder-open"></i><span> 其它</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/content/16.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">平谷の博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/javase"><i class="fa-fw fa fa-folder-open"></i><span> JavaSE</span></a></li><li><a class="site-page child" href="/categories/javaweb"><i class="fa-fw fa fa-folder-open"></i><span> JavaWeb</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF"><i class="fa-fw fa fa-folder-open"></i><span> 前端</span></a></li><li><a class="site-page child" href="/categories/%E6%A1%86%E6%9E%B6"><i class="fa-fw fa fa-folder-open"></i><span> 框架</span></a></li><li><a class="site-page child" href="/categories/spring"><i class="fa-fw fa fa-folder-open"></i><span> Spring</span></a></li><li><a class="site-page child" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93"><i class="fa-fw fa fa-folder-open"></i><span> 数据库</span></a></li><li><a class="site-page child" href="/categories/%E5%85%B6%E5%AE%83"><i class="fa-fw fa fa-folder-open"></i><span> 其它</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-11T08:21:12.212Z" title="发表于 2022-07-11 16:21:12">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-11T08:22:20.988Z" title="更新于 2022-07-11 16:22:20">2022-07-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="/2022/07/11/duo-xian-cheng/c534e4f9ac661fbe55ea0ffef758b81d.png" alt>返回当前线程的名称：Thread.currentThread().getName()</p>
+<p>线程的名称是由：Thread-编号定义的。编号从0开始。</p>
+<p>线程要运行的代码都统一存放在了<strong>run</strong>方法中。</p>
+<p>线程要运行必须要通过类中指定的方法开启。<strong>start</strong>方法。（启动后，就多了一条执行路径）</p>
+<p>start方法： 1）启动了线程； 2）让jvm调用了run方法。</p>
+<p><strong>线程的启动</strong></p>
+<p>☆ <strong>Thread类中run()和start()方法的区别：</strong></p>
+<p><strong>start</strong>()：用start方法来启动线程，真正实现了多线程运行，这时<strong>无需等待run方法体代码执行完毕而直接继续执行下面的代码</strong>。通过调用Thread类的start()方法来启动一个线程，这时此线程处于就绪（可运行）状态，并没有运行，一旦得到cpu时间片，就开始执行run()方法，这里方法run()称为线程体，它包含了要执行的这个线程的内容，Run方法运行结束，此线程随即终止。</p>
+<p><strong>run</strong>()：run()方法只是类的一个普通方法而已，如果直接调用Run方法，程<strong>序中依然只有主线程这一个线程</strong>，其程序执行路径还是只有一条，还是要顺序执行，还是要等待run方法体执行完毕后才可继续执行下面的代码，这样就没有达到写线程的目的。</p>
+<p><strong>总结</strong>：start()方法最本质的功能是从CPU中申请另一个线程空间来执行 run()方法中的代码,它和当前的线程是两条线,在相对独立的线程空间运行,也就是说,如果你直接调用线程对象的run()方法,当然也会执行,但那是 在当前线程中执行,run()方法执行完成后继续执行下面的代码.而调用start()方法后,run()方法的代码会和当前线程并发(单CPU)或并行 (多CPU)执行。所以请记住一句话：<strong>调用线程对象的run方法不会产生一个新的线程，虽然可以达到相同的执行结果,但执行过程和执行效率不同</strong></p>
+<p><strong>线程的创建</strong></p>
+<p>☆ <strong>创建线程的第一种方式</strong>：继承Thread ，由子类复写run方法。</p>
+<p><strong>步骤</strong>：</p>
+<p>1，定义类继承Thread类；</p>
+<p>2，目的是复写run方法，将要让线程运行的代码都存储到run方法中；</p>
+<p>3，通过创建Thread类的子类对象，创建线程对象；</p>
+<p>4，调用线程的start方法，开启线程，并执行run方法。</p>
+<p>☆ <strong>线程状态：</strong></p>
+<p>被创建：start()</p>
+<p>运行：具备执行资格，同时具备执行权；</p>
+<p>冻结：sleep(time),wait()—notify()唤醒；线程释放了执行权，同时释放执行资格；</p>
+<p>临时阻塞状态：线程具备cpu的执行资格，没有cpu的执行权；</p>
+<p>消亡：stop()</p>
+<p>☆ <strong>创建线程的第二种方式</strong>：实现一个接口Runnable。</p>
+<p><strong>步骤：</strong></p>
+<p>1，定义类实现Runnable接口。</p>
+<p>2，覆盖接口中的run方法（用于封装线程要运行的代码）。</p>
+<p>3，通过Thread类创建线程对象；</p>
+<p>4，将实现了Runnable接口的子类对象作为实际参数传递给Thread类中的构造函数。</p>
+<p>为什么要传递呢？因为要让线程对象明确要运行的run方法所属的对象。</p>
+<p>5，调用Thread对象的start方法。开启线程，并运行Runnable接口子类中的run方法。</p>
+<p>☆ <strong>为什么要有Runnable接口的出现？</strong></p>
+<p>1：通过继承Thread类的方式，可以完成多线程的建立。但是这种方式有一个局限性，如果一个类已经有了自己的父类，就不可以继承Thread类，因为java单继承的局限性。</p>
+<p>☆ <strong>可是该类中的还有部分代码需要被多个线程同时执行</strong>。这时怎么办呢？</p>
+<p>只有对该类进行额外的功能扩展，java就提供了一个接口Runnable。这个接口中定义了run方法，其实run方法的定义就是为了存储多线程要运行的代码。</p>
+<p>所以，通常创建线程都用第二种方式。因为实现Runnable接口可以避免单继承的局限性。</p>
+<p>2：其实是将不同类中需要被多线程执行的代码进行抽取。将多线程要运行的代码的位置单独定义到接口中。为其他类进行功能扩展提供了前提。</p>
+<p>所以Thread类在描述线程时，内部定义的run方法，也来自于Runnable接口。</p>
+<p>实现Runnable接口可以避免单继承的局限性。而且，继承Thread，是可以对Thread类中的方法，进行子类复写的。但是不需要做这个复写动作的话，只为定义线程代码存放位置，实现Runnable接口更方便一些。所以Runnable接口将线程要执行的任务封装成了对象。</p>
+<p><strong>同步</strong></p>
+<p>☆ <strong>synchronized关键字</strong></p>
+<p>一、当两个并发线程访问同一个对象object中的这个synchronized(this)同步代码块时，一个时间内只能有一个线程得到执行。另一个线程必须等待当前线程执行完这个代码块以后才能执行该代码块。</p>
+<p>二、然而，当一个线程访问object的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该object中的非synchronized(this)同步代码块。</p>
+<p>三、尤其关键的是，当一个线程访问object的一个synchronized(this)同步代码块时，其他线程对object中所有其它synchronized(this)同步代码块的访问将被阻塞。</p>
+<p>四、第三个例子同样适用其它同步代码块。也就是说，当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞。</p>
+<p>五、以上规则对其它对象锁同样适用.</p>
+<table>
+<thead>
+<tr>
+<th><strong>public class</strong> Thread1 <strong>implements</strong> Runnable {  <strong>public</strong> void run() {  <strong>synchronized</strong>(<strong>this</strong>) {  <strong>for</strong> (int i = 0; i &lt; 5; i++) {  System.out.println(Thread.currentThread().getName()+&quot;synchronized loop &quot; + i);  }  }  } }</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>☆ synchronized 关键字，它包括两种用法：synchronized 方法和 synchronized 块。</p>
+<p><strong>1. synchronized 方法</strong>：通过在方法声明中加入 synchronized关键字来声明 synchronized 方法。如：</p>
+<p>public synchronized void accessVal(int newVal);</p>
+<p>synchronized 方法控制对类成员变量的访问：<strong>每个类实例对应一把锁，每个 synchronized 方法都必须获得调用该方法的类实例的锁方能执行</strong>，否则所属线程阻塞，<strong>方法一旦执行，就独占该锁，直到从该方法返回时才将锁释放</strong>，此后被阻塞的线程方能获得该锁，重新进入可执行状态。这种机制确保了同一时刻对于每一个类实例，其所有声明为 synchronized 的成员函数中至多只有一个处于可执行状态（因为至多只有一个能够获得该类实例对应的锁），从而有效避免了类成员变量的访问冲突（只要所有可能访问类成员变量的方法均被声明为 synchronized）。</p>
+<p>在 Java 中，不光是类实例，每一个类也对应一把锁，这样我们也可将类的静态成员函数声明为 synchronized ，以控制其对类的静态成员变量的访问。</p>
+<p>synchronized 方法的缺陷：若将一个大的方法声明为synchronized 将会大大影响效率，典型地，若将线程类的方法 run() 声明为synchronized ，由于在线程的整个生命期内它一直在运行，因此将导致它对本类任何 synchronized 方法的调用都永远不会成功。当然我们可以通过将访问类成员变量的代码放到专门的方法中，将其声明为 synchronized ，并在主方法中调用来解决这一问题，但是 Java 为我们提供了更好的解决办法，那就是 synchronized 块。</p>
+<p><strong>2. synchronized 块</strong>：通过 synchronized关键字来声明synchronized 块。语法如下：</p>
+<p>synchronized(syncObject) {</p>
+<p>//允许访问控制的代码</p>
+<p>}</p>
+<p>synchronized 块是这样一个代码块，其中的代码必须获得对象 syncObject （如前所述，可以是类实例或类）的锁方能执行，具体机制同前所述。由于可以针对任意代码块，且可任意指定上锁的对象，故灵活性较高。</p>
+<p>☆ <strong>同步</strong>：</p>
+<p><strong>好处</strong>：解决了线程安全问题。Synchronized</p>
+<p><strong>弊端</strong>：相对降低性能，因为判断锁需要消耗资源，产生了死锁。</p>
+<p><strong>同步的第二种表现形式</strong>： //对共享资源的方法定义同步</p>
+<p><strong>同步函数</strong>：其实就是将同步关键字定义在<strong>函数</strong>上，让函数具备了同步性。</p>
+<p><strong>同步函数是用的哪个锁呢？</strong> //synchronized(this)用以定义需要进行同步的某一部分代码块。通过验证，函数都有自己所属的对象this，所以同步函数所使用的锁就是this锁。This.方法名</p>
+<p>☆ <strong>当同步函数被static修饰时，这时的同步用的是哪个锁呢？</strong></p>
+<p>静态函数在加载时所属于类，这时有可能还没有该类产生的对象，但是该类的字节码文件加载进内存就已经被封装成了对象，这个对象就是该类的字节码文件对象。</p>
+<p>所以静态加载时，只有一个对象存在，那么静态同步函数就使用的这个对象。</p>
+<p>这个对象就是 类名.class</p>
+<p>☆ <strong>同步代码块和同步函数的区别？</strong></p>
+<ul>
+<li>同步代码块使用的锁可以是任意对象。
+<ul>
+<li>
+<p>同步函数使用的锁是this，静态同步函数的锁是该类的字节码文件对象。</p>
+</li>
+<li>
+<p>在一个类中只有一个同步的话，可以使用同步函数。如果有多同步，必须使用同步代码块，来确定不同的锁。所以同步代码块相对灵活一些。</p>
+<p>★考点问题：请写一个延迟加载的单例模式？写懒汉式；当出现多线程访问时怎么解决？加同步，解决安全问题；效率高吗？不高；怎样解决？通过双重判断的形式解决。</p>
+<p>//懒汉式：延迟加载方式。</p>
+<p>当多线程访问懒汉式时，因为懒汉式的方法内对共性数据进行多条语句的操作。所以容易出现线程安全问题。为了解决，加入同步机制，解决安全问题。但是却带来了效率降低。</p>
+<p>为了效率问题，通过双重判断的形式解决。</p>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>class</strong> Single{  <strong>private</strong> static Single s = <strong>null</strong>;  <strong>private</strong> Single(){}  <strong>public</strong> static Single getInstance(){ <em>//锁是谁？字节码文件对象；</em>  <strong>if</strong>(s == <strong>null</strong>){  <strong>synchronized</strong>(Single.class){  <strong>if</strong>(s == <strong>null</strong>)  s = <strong>new</strong> Single();  }  }  <strong>return</strong> s;  } }</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>☆ <strong>等待唤醒机制</strong>：</p>
+<p><strong>涉及的方法：</strong></p>
+<p><strong>wait</strong>:将同步中的线程处于冻结状态。释放了执行权，释放了资格。同时将线程对象存储到线程池中。</p>
+<p><strong>notify</strong>：唤醒线程池中某一个等待线程。</p>
+<p><strong>notifyAll</strong>: 唤醒的是线程池中的所有线程。</p>
+<p><strong>注意</strong>：</p>
+<p>1：这些方法都需要定义在同步中。</p>
+<p>2：因为这些方法必须要标示所属的锁。</p>
+<p>你要知道 A锁上的线程被wait了,那这个线程就相当于处于A锁的线程池中，只能A锁的notify唤醒。</p>
+<p>3：这三个方法都定义在Object类中。为什么操作线程的方法定义在Object类中？</p>
+<p>因为这三个方法都需要定义同步内，并标示所属的同步锁，既然被锁调用，而锁又可以是任意对象，那么能被任意对象调用的方法一定定义在Object类中。</p>
+<p>☆ <strong>wait 和 sleep区别</strong>： 分析这两个方法：从执行权和锁上来分析：</p>
+<p>wait：可以指定时间也可以不指定时间。不指定时间，只能由对应的notify或者notifyAll来唤醒。</p>
+<p>sleep：必须指定时间，时间到自动从冻结状态转成运行状态(临时阻塞状态)。</p>
+<p>wait：线程会释放执行权，而且线程会释放锁。</p>
+<p>sleep：线程会释放执行权，但不是不释放锁。</p>
+<p><strong>线程的停止</strong>：通过stop方法就可以停止线程。但是这个方式过时了。</p>
+<p>停止线程：原理就是：让线程运行的代码结束，也就是结束run方法。</p>
+<p>☆ **怎么结束run方法？**一般run方法里肯定定义循环。所以只要结束循环即可。</p>
+<p>第一种方式：定义循环的结束标记。</p>
+<p>第二种方式：如果线程处于了冻结状态，是不可能读到标记的，这时就需要通过Thread类中的interrupt方法，将其冻结状态强制清除。让线程恢复具备执行资格的状态，让线程可以读到标记，并结束。</p>
+<p>☆ <strong>Thread 的方法</strong></p>
+<p>---------&lt; java.lang.Thread &gt;----------</p>
+<p><strong>interrupt</strong>()：中断线程。</p>
+<p><strong>setPriority</strong>(int newPriority)：更改线程的优先级。</p>
+<p><strong>getPriority</strong>()：返回线程的优先级。</p>
+<p><strong>toString</strong>()：返回该线程的字符串表示形式，包括线程名称、优先级和线程组。</p>
+<p>Thread.<strong>yield</strong>()：暂停当前正在执行的线程对象，并执行其他线程。</p>
+<p><strong>setDaemon</strong>(true)：将该线程标记为守护线程或用户线程。将该线程标记为守护线程或用户线程。当正在运行的线程都是守护线程时，Java 虚拟机退出。该方法必须在启动线程前调用。</p>
+<p><strong>join</strong>：临时加入一个线程的时候可以使用join方法。</p>
+<p>当A线程执行到了B线程的join方式。A线程处于冻结状态，释放了执行权，B开始执行。A什么时候执行呢？只有当B线程运行结束后，A才从冻结状态恢复运行状态执行。</p>
+<table>
+<thead>
+<tr>
+<th><strong>public class</strong> A{  <strong>public</strong> static void main(String args[]){  B = <strong>new</strong> B();<em>// B extends Thread</em>  b.start();  b.join();  <strong>…</strong>  } }</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>☆ <strong>Lock</strong></p>
+<p><strong>LOCK</strong>的出现替代了同步：lock.lock();………lock.unlock();</p>
+<p>Lock接口：多线程在JDK1.5版本升级时，推出一个接口Lock接口。</p>
+<p>解决线程安全问题使用同步的形式，(同步代码块，要么同步函数)其实最终使用的都是锁机制。</p>
+<p>到了后期版本，直接将锁封装成了对象。线程进入同步就是具备了锁，执行完，离开同步，就是释放了锁。</p>
+<p>在后期对锁的分析过程中，发现，获取锁，或者释放锁的动作应该是锁这个事物更清楚。所以将这些动作定义在了锁当中，并把锁定义成对象。</p>
+<p>所以同步是隐示的锁操作，而Lock对象是显示的锁操作，它的出现就替代了同步。</p>
+<p>在之前的版本中使用Object类中<strong>wait</strong>、<strong>notify</strong>、<strong>notifyAll</strong>的方式来完成的。那是因为同步中的锁是任意对象，所以操作锁的等待唤醒的方法都定义在Object类中。</p>
+<p>而现在锁是指定对象Lock。所以查找等待唤醒机制方式需要通过Lock接口来完成。而Lock接口中并没有直接操作等待唤醒的方法，而是将这些方式又单独封装到了一个对象中。这个对象就是Condition，将Object中的三个方法进行单独的封装。并提供了功能一致的方法 <strong>await</strong>()、<strong>signal</strong>()、<strong>signalAll</strong>()体现新版本对象的好处。</p>
+<p>&lt; java.util.concurrent.locks &gt; Condition接口：await()、signal()、signalAll()；</p>
+<table>
+<thead>
+<tr>
+<th><strong>class</strong> BoundedBuffer {  final Lock lock = <strong>new</strong> ReentrantLock();  final Condition notFull = lock.newCondition();  final Condition notEmpty = lock.newCondition();  final Object[] items = <strong>new</strong> Object[100];  int putptr, takeptr, count;    <strong>public</strong> void put(Object x) <strong>throws</strong> InterruptedException {  lock.lock();  <strong>try</strong> {  <strong>while</strong> (count == items.length)  notFull.await();<em>//栈满时阻塞</em>  items[putptr] = x;  <strong>if</strong> (++putptr == items.length)   putptr = 0;  ++count;  notEmpty.signal();<em>//解其他线程的 notEmpty.await() 锁</em>  }<strong>finally</strong> {  lock.unlock();  }  }    <strong>public</strong> Object take() <strong>throws</strong> InterruptedException {  lock.lock();  <strong>try</strong> {   <strong>while</strong> (count == 0)   notEmpty.await();<em>//栈空时阻塞</em>   Object x = items[takeptr];   <strong>if</strong> (++takeptr == items.length) takeptr = 0;   --count;   notFull.signal();   <strong>return</strong> x;   }<strong>finally</strong> {  lock.unlock();   }  } }</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p><strong>线程池</strong></p>
+<p>* ****线程池：****其实就是一个容纳多个线程的容器，其中的线程可以反复使用，省去了频繁创建线程对象的操作，无需反复创建线程而消耗过多资源。</p>
+<p><strong>Executors</strong>： `public static ExecutorService <strong>newFixedThreadPool</strong>(int nThreads)`：返回线程池对象。(创建的是有界线程池,也就是池中的线程个数可以指定最大数量)</p>
+<p><strong>ExecutorService</strong> ： `public Future&lt;?&gt; submit(Runnable task)`:获取线程池中的某一个线程对象，并执行</p>
+<p>使用线程池中线程对象的步骤：</p>
+<p>1. 创建线程池对象。</p>
+<p>2. 创建Runnable接口子类对象。(task)</p>
+<p>3. 提交Runnable接口子类对象。(take task)</p>
+<p>4. 关闭线程池(一般不做)。</p>
+<p>public class <strong>MyRunnable</strong> implements Runnable {</p>
+<p>@Override</p>
+<p>public void <strong>run</strong>() {</p>
+<p>System.out.println(“我要一个教练”);</p>
+<p>try {</p>
+<p>Thread.sleep(2000);</p>
+<p>} catch (InterruptedException e) {</p>
+<p>e.printStackTrace();</p>
+<p>}</p>
+<p>System.out.println(&quot;教练来了： &quot; + Thread.currentThread().getName());</p>
+<p>System.out.println(“教我游泳,交完后，教练回到了游泳池”);</p>
+<p>}</p>
+<p>}</p>
+<p>线程池测试类：</p>
+<p>// 创建线程池对象</p>
+<p>ExecutorService service = Executors.newFixedThreadPool(2);//包含2个线程对象</p>
+<p>// 创建Runnable实例对象</p>
+<p>MyRunnable r = new MyRunnable();</p>
+<p>//自己创建线程对象的方式</p>
+<p>// Thread t = new Thread®;</p>
+<p>// t.start(); —&gt; 调用MyRunnable中的run()</p>
+<p>// 从线程池中获取线程对象,然后调用MyRunnable中的run()</p>
+<p>service.submit®;</p>
+<p>// 再获取个线程对象，调用MyRunnable中的run()</p>
+<p>service.submit®;</p>
+<p>service.submit®;</p>
+<p>// 注意：submit方法调用结束后，程序并不终止，是因为线程池控制了线程的关闭。</p>
+<p>// 将使用完的线程又归还到了线程池中</p>
+<p>// 关闭线程池</p>
+<p><a target="_blank" rel="noopener" href="//service.shutdown">//service.shutdown</a>();</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">PGXIE</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/07/11/duo-xian-cheng/">http://example.com/2022/07/11/duo-xian-cheng/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">平谷の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/content/16.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/11/qi-ta-ji-zhu/hexo/hexo-typora-kai-fa-hexo-cha-jian-jie-jue-tu-pian-lu-jing-bu-yi-zhi/"><img class="prev-cover" src="/img/content/9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/07/11/javase/javase-io/"><img class="next-cover" src="/img/content/9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JavaSE IO流</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/0.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">PGXIE</div><div class="author-info__description">学习与生活记录的地方！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/pgxie" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2505552027@qq.com" target="_blank" title="Email"><i class="fa fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/qi-ta-ji-zhu/hexo/hexo-typora-kai-fa-hexo-cha-jian-jie-jue-tu-pian-lu-jing-bu-yi-zhi/" title="无题"><img src="/img/content/9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/07/11/qi-ta-ji-zhu/hexo/hexo-typora-kai-fa-hexo-cha-jian-jie-jue-tu-pian-lu-jing-bu-yi-zhi/" title="无题">无题</a><time datetime="2022-07-11T08:26:25.847Z" title="发表于 2022-07-11 16:26:25">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/duo-xian-cheng/" title="无题"><img src="/img/content/16.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/07/11/duo-xian-cheng/" title="无题">无题</a><time datetime="2022-07-11T08:21:12.212Z" title="发表于 2022-07-11 16:21:12">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/javase/javase-io/" title="JavaSE IO流"><img src="/img/content/9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE IO流"/></a><div class="content"><a class="title" href="/2022/07/11/javase/javase-io/" title="JavaSE IO流">JavaSE IO流</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/javase/javase-yi-chang/" title="JavaSE 异常"><img src="/img/content/6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaSE 异常"/></a><div class="content"><a class="title" href="/2022/07/11/javase/javase-yi-chang/" title="JavaSE 异常">JavaSE 异常</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/qi-ta-ji-zhu/hexo/shi-yong-hexo-github-mian-fei-da-jian-ge-ren-bo-ke-wang-zhan-chao-xiang-xi-jiao-cheng/" title="使用hexo+github免费搭建个人博客网站"><img src="/img/content/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用hexo+github免费搭建个人博客网站"/></a><div class="content"><a class="title" href="/2022/07/11/qi-ta-ji-zhu/hexo/shi-yong-hexo-github-mian-fei-da-jian-ge-ren-bo-ke-wang-zhan-chao-xiang-xi-jiao-cheng/" title="使用hexo+github免费搭建个人博客网站">使用hexo+github免费搭建个人博客网站</a><time datetime="2022-07-10T16:00:00.000Z" title="发表于 2022-07-11 00:00:00">2022-07-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By PGXIE</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
